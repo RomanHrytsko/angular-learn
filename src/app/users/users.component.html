@@ -1,0 +1,8 @@
+<div *ngFor="let user of users">
+  <h3>Info about user</h3>
+<app-user [user]="user"></app-user>
+  <h3>Address</h3>
+  <app-address [user]="user"></app-address>
+  <hr>
+</div>
+
