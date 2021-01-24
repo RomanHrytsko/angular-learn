@@ -1,0 +1,9 @@
+<!--<div *ngFor="let user of users">-->
+<!--<app-user   [user]="user" ></app-user>-->
+<!--</div>-->
+<ul>
+  <li><a [routerLink]="['link','users']">users</a></li>
+  <li><a [routerLink]="['link','home']">home</a></li>
+</ul>
+
+<router-outlet></router-outlet>
