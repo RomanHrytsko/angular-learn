@@ -1,0 +1,9 @@
+.main-block {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+button {
+  margin-left: 20px;
+}
