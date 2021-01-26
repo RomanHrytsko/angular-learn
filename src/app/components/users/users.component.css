@@ -1,0 +1,7 @@
+.display{
+  display: flex;
+  justify-content: space-between;
+}
+.full-info-block{
+  width: 200px;
+}

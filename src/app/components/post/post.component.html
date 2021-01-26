@@ -1,4 +1,9 @@
-<div>
-  {{post.id}}
-  {{post.body}}
+<div [class]="['main-post-block']">
+  <div>
+    {{post.id}}
+    {{post.title}}
+    <button (click)="getPostInfo()">Post details</button>
+
+  </div>
 </div>
+

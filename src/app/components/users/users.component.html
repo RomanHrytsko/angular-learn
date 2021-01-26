@@ -1,2 +1,10 @@
-<app-user *ngFor="let user of users" [user]="user"></app-user>
-<router-outlet></router-outlet>
+<div [class]="['display']">
+  <div>
+    <app-user *ngFor="let user of users" [user]="user"></app-user>
+  </div>
+  <div [class]="['full-info-block']">
+    <router-outlet></router-outlet>
+  </div>
+</div>
+
+

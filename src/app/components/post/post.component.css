@@ -1,0 +1,7 @@
+.main-post-block{
+  display: flex;
+  justify-content: space-between;
+}
+.dispaly{
+  display: flex;
+}

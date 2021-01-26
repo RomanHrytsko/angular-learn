@@ -25,7 +25,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: 'posts', component: PostComponent, resolve: {postData: PostResolveService},
+    path: 'posts', component: PostsComponent, resolve: {postData: PostResolveService},
     children: [
       {
         path: ':id', component: FullPostComponentComponent
