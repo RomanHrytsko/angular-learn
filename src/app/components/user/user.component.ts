@@ -19,6 +19,10 @@ export class UserComponent implements OnInit {
 
   }
 
+  goToPosts(): void {
+    this.router.navigate(['posts']);
+  }
+
   ngOnInit(): void {
   }
 
