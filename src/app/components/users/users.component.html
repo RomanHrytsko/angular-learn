@@ -1,0 +1,6 @@
+<form #form="ngForm" (ngSubmit)="submit(form)">
+  <input [(ngModel)]="user.name" minlength="2" name="name">
+  <input [(ngModel)]="user.age" name="age">
+  <button>save</button>
+</form>
+<app-user *ngFor="let user of usersArr" [user]="user"></app-user>
