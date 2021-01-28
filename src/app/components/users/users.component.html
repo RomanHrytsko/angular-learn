@@ -1,6 +1,20 @@
 <form #form="ngForm" (ngSubmit)="submit(form)">
-  <input [(ngModel)]="user.name" minlength="2" name="name">
-  <input [(ngModel)]="user.age" name="age">
-  <button>save</button>
+
+
+  <span [class]="['error']" *ngIf="form.controls.name?.value === '' ">Please enter your name </span>
+
+  <input [(ngModel)]="user.name" minlength="3" name="name"
+         placeholder="Name" >
+
+
+  <input [(ngModel)]="user.age" name="age" [type]="['number']" placeholder="Your age(number)">
+
+
+  <span *ngIf="[!form.controls.email?.invalid ]">Expected: example@ex.vom</span>
+  <input [(ngModel)]="user.email" name="email" [type]="['email']"
+         placeholder="Email">
+
+
+  <button [disabled]="!form.valid">save</button>
 </form>
 <app-user *ngFor="let user of usersArr" [user]="user"></app-user>

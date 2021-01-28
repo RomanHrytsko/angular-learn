@@ -8,7 +8,7 @@ import {Users} from '../../Data/Users';
   styleUrls: ['./users.component.css']
 })
 export class UsersComponent implements OnInit {
-  user = {name: '', age: ''};
+  user = {name: '', age: '', email: '' };
   usersArr = [];
   userArr: Users;
 
@@ -21,7 +21,8 @@ export class UsersComponent implements OnInit {
   submit(form: NgForm): void {
 
     console.log(form);
-    this.usersArr.push({name: form.controls.name.value, age: form.controls.age.value});
+    this.usersArr.push({name: form.controls.name.value, age: form.controls.age.value, email: form.controls.email.value});
     console.log(this.usersArr);
+
   }
 }
