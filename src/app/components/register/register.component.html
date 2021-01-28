@@ -1,0 +1,12 @@
+<div [class]="['registration-block']">
+  <form #form="ngForm" (ngSubmit)="registration(form)">
+
+    <input [(ngModel)]="newUser.name" name="name" placeholder="name">
+    <input [(ngModel)]="newUser.surname" name="surname" placeholder="surname">
+    <input [(ngModel)]="newUser.email" name="email" placeholder="email" type="email">
+    <input [(ngModel)]="newUser.password" name="password" placeholder="password" type="password">
+    <input [(ngModel)]="newUser.checkedPass" name="checkedPass" placeholder="repeat password" type="password">
+    <button>Save</button>
+  </form>
+
+</div>

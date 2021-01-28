@@ -1,0 +1,8 @@
+<div [class]="['auth-block']">
+  <form #form="ngForm" (ngSubmit)="submit(form)">
+
+    <input [(ngModel)]="user.log" name="log" placeholder="log">
+    <input [(ngModel)]="user.password" name="password" placeholder="password">
+    <button>Log in</button>
+  </form>
+</div>
