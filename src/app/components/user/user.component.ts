@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {User} from '../../models/User';
 import {ActivatedRoute, Router} from '@angular/router';
+import {PostsService} from '../../services/posts/posts.service';
 
 @Component({
   selector: 'app-user',
@@ -11,7 +12,7 @@ export class UserComponent implements OnInit {
   @Input()
   user: User;
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private router: Router, private activatedRoute: ActivatedRoute, private postsService: PostsService) {
   }
 
   goTo(): void {
@@ -22,4 +23,7 @@ export class UserComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  getPosts() {
+    this.postsService.getPostsByUserId(this.user.id).subscribe()
+  }
 }
