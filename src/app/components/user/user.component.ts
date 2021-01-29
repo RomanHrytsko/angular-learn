@@ -28,6 +28,6 @@ export class UserComponent implements OnInit {
   }
 
   getPosts() {
-    this.postsService.getPostsByUserId(this.user.id).subscribe()
+    this.postsService.getPostsByUserId(this.user.id).subscribe();
   }
 }
