@@ -7,9 +7,9 @@
 input:invalid{
   border: 2px solid red;
 }
-input:valid{
-  border: 2px solid #10ff10;
-}
+/*input:valid{*/
+/*  border: 2px solid #10ff10;*/
+/*}*/
 input{
   width: 300px;
 }

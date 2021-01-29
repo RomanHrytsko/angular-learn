@@ -3,8 +3,9 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { UsersComponent } from './components/users/users.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { UserComponent } from './components/user/user.component';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,9 @@ import { UserComponent } from './components/user/user.component';
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

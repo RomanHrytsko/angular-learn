@@ -1,20 +1,48 @@
-<form #form="ngForm" (ngSubmit)="submit(form)">
+<!--<form #form="ngForm" (ngSubmit)="submit(form)">-->
 
 
-  <span [class]="['error']" *ngIf="form.controls.name?.value === '' ">Please enter your name </span>
+<!--  <span [class]="['error']" *ngIf="form.controls.name?.value === '' ">Please enter your name </span>-->
 
-  <input [(ngModel)]="user.name" minlength="3" name="name"
-         placeholder="Name" >
-
-
-  <input [(ngModel)]="user.age" name="age" [type]="['number']" placeholder="Your age(number)">
+<!--  <input [(ngModel)]="user.name" minlength="3" name="name"-->
+<!--         placeholder="Name" >-->
 
 
-  <span *ngIf="[!form.controls.email?.invalid ]">Expected: example@ex.vom</span>
-  <input [(ngModel)]="user.email" name="email" [type]="['email']"
-         placeholder="Email">
+<!--  <input [(ngModel)]="user.age" name="age" [type]="['number']" placeholder="Your age(number)">-->
 
 
-  <button [disabled]="!form.valid">save</button>
+<!--  <span *ngIf="[!form.controls.email?.invalid ]">Expected: example@ex.vom</span>-->
+<!--  <input [(ngModel)]="user.email" name="email" [type]="['email']"-->
+<!--         placeholder="Email">-->
+
+
+<!--  <button [disabled]="!form.valid">save</button>-->
+<!--</form>-->
+<!--<app-user *ngFor="let user of usersArr" [user]="user"></app-user>-->
+
+
+<form [formGroup]="inputs">
+
+  <div>
+    <label>Name:
+      <input [formControl]="name"
+             [class.success]="inputs.controls.name.value !== '' && inputs.controls.name.value.length>= 4 "
+             [class.error]="inputs.controls.name.touched && inputs.controls.name.value.length <4">
+    </label>
+  </div>
+  <div>
+    <label>Age:
+      <input [formControl]="age" type="number" [class.success]="inputs.controls.age.value > 15"
+             [class.error]="inputs.controls.age.value <= 15 && inputs.controls.age.touched">
+    </label>
+  </div>
+  <div *ngIf="inputs.controls.age.hasError('ageError') && inputs.controls.age.value"> Age must be > 15</div>
+  <div>
+    <label> Email:
+      <input [formControl]="email" type="email"
+             [class.success]="inputs.controls.email.valid && inputs.controls.email.value !== ''">
+    </label>
+  </div>
+  <button (click)="addNewUser(inputs)" [disabled]="!inputs.valid" >Save</button>
 </form>
 <app-user *ngFor="let user of usersArr" [user]="user"></app-user>
+
