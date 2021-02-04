@@ -1,0 +1,29 @@
+<div appRed>
+  {{title | uppercase}}
+</div>
+<div>
+  {{title | lowercase}}
+</div>
+<div>
+  {{asyncValue | async}}
+</div>
+<div appRed>
+  {{date | date }}
+</div>
+<div>
+  {{price | currency : 'JPY'}}
+</div>
+
+<div>
+  {{users | json}}
+</div>
+<div>
+  {{titleCase | titlecase}}
+</div>
+<div>
+  {{e | number: '3.1-4'}}
+</div>
+<hr>
+<div>
+  {{title | custom: 'i':100}}
+</div>
