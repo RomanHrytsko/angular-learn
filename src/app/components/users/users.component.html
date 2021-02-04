@@ -1,0 +1,6 @@
+<div *ngIf="users">
+  <div *ngFor="let user of users|usersPipe" appBoldAndColorful [color]="['red']">
+    {{user}}
+  </div>
+
+</div>
